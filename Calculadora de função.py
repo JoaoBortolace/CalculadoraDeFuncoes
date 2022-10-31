@@ -1,14 +1,13 @@
 # Calculadora de equações
 from math import sqrt, log, asin, acos, degrees
 
-
 def p_grau():
     print('ax + b = c')
     a = float(input('A = '))
     b = float(input('B = '))
     c = float(input('C = '))
     rp = (c - b) / a
-    print('x = {:.2f}'.format(rp))
+    print('x = {:.3f}'.format(rp))
 
 
 def s_grau():
@@ -18,12 +17,14 @@ def s_grau():
     c = float(input('C = '))
     delta = b ** 2 - (4 * a * c)
     if delta <= -1:
-        print('S = {}, não há raiz reais')
+        rd = sqrt(abs(delta))/(2*a)
+        rs = (-1 * b) / (2 * a)
+        print('x = {:.3f} ± {:.3f}i'.format(rs, rd))
     else:
         rd = sqrt(delta)
         rs1 = (-1 * b + rd) / (2 * a)
         rs2 = (-1 * b - rd) / (2 * a)
-        print('x¹ = {:.2f} x² = {:.2f}'.format(rs1, rs2))
+        print('x¹ = {:.3f}, x² = {:.3f}'.format(rs1, rs2))
 
 
 def logi():
@@ -31,7 +32,7 @@ def logi():
     a = float(input('A = '))
     b = float(input('B = '))
     rl = log(b, a)
-    print(('x = {:.2f}'.format(rl)))
+    print(('x = {:.3f}'.format(rl)))
 
 
 def seno():
@@ -45,9 +46,9 @@ def seno():
         ime = (-1 * b) + a
         ima = b + a
         if ime < ima:
-            print('x = {:.2f}°, Im = [{},{}]'.format(rt, ime, ima))
+            print('x = {:.3f}°, Im = [{},{}]'.format(rt, ime, ima))
         else:
-            print('x = {:.2f}°, Im = [{},{}]'.format(rt, ima, ime))
+            print('x = {:.3f}°, Im = [{},{}]'.format(rt, ima, ime))
     else:
         print('\033[1;31mErro de matemática!\033[30m')
 
@@ -63,9 +64,9 @@ def coss():
         ime = (-1 * b) + a
         ima = b + a
         if ime < ima:
-            print('x = {:.2f}°, Im = [{},{}]'.format(rt, ime, ima))
+            print('x = {:.3f}°, Im = [{},{}]'.format(rt, ime, ima))
         else:
-            print('x = {:.2f}°, Im = [{},{}]'.format(rt, ima, ime))
+            print('x = {:.3f}°, Im = [{},{}]'.format(rt, ima, ime))
     else:
         print('\033[1;31mErro de matemática!\033[30m')
 
