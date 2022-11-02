@@ -11,8 +11,8 @@ def p_grau():
         a = float(ain)
         b = float(bin)
         c = float(cin)
-        rp = (c - b) / a
-        print('x = {:.3f}'.format(rp))
+        rp = round((c - b) / a, 3)
+        print(f'x = {rp}')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
         pass  # types not compatible
@@ -29,14 +29,14 @@ def s_grau():
         c = float(cin)
         delta = b ** 2 - (4 * a * c)
         if delta <= -1:
-            rd = sqrt(abs(delta))/(2*a)
-            rs = (-1 * b) / (2 * a)
-            print('x = {:.3f} ± {:.3f}i'.format(rs, rd))
+            rd = round(sqrt(abs(delta))/(2*a), 3)
+            rs = round((-1 * b) / (2 * a), 3)
+            print(f'x = {rs} ± {rd}i')
         else:
             rd = sqrt(delta)
-            rs1 = (-1 * b + rd) / (2 * a)
-            rs2 = (-1 * b - rd) / (2 * a)
-            print('x¹ = {:.3f}, x² = {:.3f}'.format(rs1, rs2))
+            rs1 = round((-1 * b + rd) / (2 * a), 3)
+            rs2 = round((-1 * b - rd) / (2 * a), 3)
+            print(f'x¹ = {rs1}, x² = {rs2}')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
         pass  # types not compatible
@@ -49,8 +49,8 @@ def logi():
     try:
         a = float(ain)
         b = float(bin)
-        rl = log(b, a)
-        print(('x = {:.3f}'.format(rl)))
+        rl = round(log(b, a), 3)
+        print(f'x = {rl}')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
         pass  # types not compatible
@@ -67,13 +67,13 @@ def seno():
         c = float(cin)
         rs = (c - a) / b
         if 1 >= rs >= -1:
-            rt = degrees(asin(rs))
-            ime = (-1 * b) + a
-            ima = b + a
+            rt = round(degrees(asin(rs)), 3)
+            ime = round((-1 * b) + a, 3)
+            ima = round(b + a, 3)
             if ime < ima:
-                print('x = {:.3f}°, Im = [{},{}]'.format(rt, ime, ima))
+                print(f'x = {rt}°, Im = [{ime},{ima}]')
             else:
-                print('x = {:.3f}°, Im = [{},{}]'.format(rt, ima, ime))
+                print(f'x = {rt}°, Im = [{ima},{ime}]')
         else:
             print('\033[1;31mErro de matemática!\033[30m')
     except (TypeError, ValueError, KeyError) as e:
@@ -92,13 +92,13 @@ def coss():
         c = float(cin)
         rc = (c - a) / b
         if 1 >= rc >= -1:
-            rt = degrees(acos(rc))
-            ime = (-1 * b) + a
-            ima = b + a
+            rt = round(degrees(acos(rc)), 3)
+            ime = round((-1 * b) + a, 3)
+            ima = round(b + a, 3)
             if ime < ima:
-                print('x = {:.3f}°, Im = [{},{}]'.format(rt, ime, ima))
+                print(f'x = {rt}°, Im = [{ime},{ima}]')
             else:
-                print('x = {:.3f}°, Im = [{},{}]'.format(rt, ima, ime))
+                print(f'x = {rt}°, Im = [{ima},{ime}]')
         else:
             print('\033[1;31mErro de matemática!\033[37m')
     except (TypeError, ValueError, KeyError) as e:
@@ -113,9 +113,9 @@ def ret():
     try:
         mod = float(modin)
         teta = float(tetain)
-        a = mod*cos(radians(teta))
-        b = mod*sin(radians(teta))
-        print(f'{mod:.2f}⌊{teta:.2f}° -> {a:.2f} + {b:.2f}i')
+        a = round(mod*cos(radians(teta)), 3)
+        b = round(mod*sin(radians(teta)), 3)
+        print(f'{mod}⌊{teta}° -> {a} + {b}i')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
         pass  # types not compatible
@@ -128,9 +128,9 @@ def pol():
     try:
         a = float(ain)
         b = float(bin)
-        mod = sqrt((a**2) + (b**2))
-        ang = degrees(atan(a/b))
-        print(f'{a:.2f} + {b:.2f}i -> {mod:.2f}⌊{ang:.2f}°')
+        mod = round(sqrt((a**2) + (b**2)), 3)
+        ang = round(degrees(atan(b/a)), 3)
+        print(f'{a} + {b}i -> {mod}⌊{ang}°')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
         pass  # types not compatible
