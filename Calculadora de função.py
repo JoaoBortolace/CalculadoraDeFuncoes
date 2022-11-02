@@ -1,11 +1,12 @@
 # Calculadora de equações
 from math import atan, sin, cos, radians, sqrt, log, asin, acos, degrees
 
+
 def p_grau():
     print('ax + b = c')
-    ain = input('A = ').replace(',','.')
-    bin = input('B = ').replace(',','.')
-    cin = input('C = ').replace(',','.')
+    ain = input('A = ').replace(',', '.')
+    bin = input('B = ').replace(',', '.')
+    cin = input('C = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
@@ -13,15 +14,15 @@ def p_grau():
         rp = (c - b) / a
         print('x = {:.3f}'.format(rp))
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
 
 
 def s_grau():
     print('ax² + bx + c = 0')
-    ain = input('A = ').replace(',','.')
-    bin = input('B = ').replace(',','.')
-    cin = input('C = ').replace(',','.')
+    ain = input('A = ').replace(',', '.')
+    bin = input('B = ').replace(',', '.')
+    cin = input('C = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
@@ -37,29 +38,29 @@ def s_grau():
             rs2 = (-1 * b - rd) / (2 * a)
             print('x¹ = {:.3f}, x² = {:.3f}'.format(rs1, rs2))
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
 
 
 def logi():
     print('log a b = x')
-    ain = input('A = ').replace(',','.')
-    bin = input('B = ').replace(',','.')
+    ain = input('A = ').replace(',', '.')
+    bin = input('B = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
         rl = log(b, a)
         print(('x = {:.3f}'.format(rl)))
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
 
 
 def seno():
     print('a + b.senx = c')
-    ain = input('A = ').replace(',','.')
-    bin = input('B = ').replace(',','.')
-    cin = input('C = ').replace(',','.')
+    ain = input('A = ').replace(',', '.')
+    bin = input('B = ').replace(',', '.')
+    cin = input('C = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
@@ -76,15 +77,15 @@ def seno():
         else:
             print('\033[1;31mErro de matemática!\033[30m')
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
 
 
 def coss():
     print('a + b.cosx = c')
-    ain = input('A = ').replace(',','.')
-    bin = input('B = ').replace(',','.')
-    cin = input('C = ').replace(',','.')
+    ain = input('A = ').replace(',', '.')
+    bin = input('B = ').replace(',', '.')
+    cin = input('C = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
@@ -99,16 +100,16 @@ def coss():
             else:
                 print('x = {:.3f}°, Im = [{},{}]'.format(rt, ima, ime))
         else:
-            print('\033[1;31mErro de matemática!\033[30m')
+            print('\033[1;31mErro de matemática!\033[37m')
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
 
 
 def ret():
     print('A⌊θ° -> a + bi')
-    modin = input('A = ').replace(',','.')
-    tetain = input('θ° = ').replace(',','.')
+    modin = input('A = ').replace(',', '.')
+    tetain = input('θ° = ').replace(',', '.')
     try:
         mod = float(modin)
         teta = float(tetain)
@@ -116,14 +117,14 @@ def ret():
         b = mod*sin(radians(teta))
         print(f'{mod:.2f}⌊{teta:.2f}° -> {a:.2f} + {b:.2f}i')
     except (TypeError, ValueError, KeyError) as e:
-        print('\033[1;31mDados inseridos de forma incorreta\033[37m') 
-        pass # types not compatible
-        
+        print('\033[1;31mDados inseridos de forma incorreta\033[37m')
+        pass  # types not compatible
+
 
 def pol():
     print('a + bi -> A⌊θ°')
-    ain = input('a = ').replace(',','.')
-    bin = input('b = ').replace(',','.')
+    ain = input('a = ').replace(',', '.')
+    bin = input('b = ').replace(',', '.')
     try:
         a = float(ain)
         b = float(bin)
@@ -132,7 +133,7 @@ def pol():
         print(f'{a:.2f} + {b:.2f}i -> {mod:.2f}⌊{ang:.2f}°')
     except (TypeError, ValueError, KeyError) as e:
         print('\033[1;31mDados inseridos de forma incorreta\033[37m')
-        pass # types not compatible
+        pass  # types not compatible
 
 
 def per():
@@ -159,7 +160,7 @@ def per():
             print('Até mais!')
             exit()
         else:
-            print('\033[1;31mOperação inválida! Insira novamente\033[30m')
+            print('\033[1;31mOperação inválida! Insira novamente\033[37m')
             per()
     else:
         print('\033[1;31mOperação inválida! Insira novamente\033[37m')
@@ -174,4 +175,6 @@ def per():
         exit()
     else:
         return per()
+
+
 per()
